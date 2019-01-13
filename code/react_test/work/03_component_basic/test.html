@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>03_component_basic</title>
+</head>
+<body>
+
+  <div id="example1"></div>
+  <div id="example2"></div>
+
+  <script type="text/javascript" src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/babel-standalone/6.25.0/babel.min.js"></script>
+
+  <script type="text/babel">
+    function Component1() {
+        return <h3>工厂函数组件（简单方式）</h3>
+    }
+    class Component2 extends React.Component{
+        render(){
+            console.log(this,this instanceof Component2)
+            return <h1>ES6组件（复杂方式）</h1>
+        }
+    }
+    ReactDOM.render(<Component1 />,document.getElementById('example1'))
+    ReactDOM.render(<Component2 />,document.getElementById('example2'))
+  </script>
+</body>
+</html>
